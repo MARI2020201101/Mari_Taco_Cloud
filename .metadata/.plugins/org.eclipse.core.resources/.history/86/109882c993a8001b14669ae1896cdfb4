@@ -1,0 +1,28 @@
+package tacos.security;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import lombok.Data;
+import tacos.User;
+
+@Data
+public class RegistrationForm {
+
+	
+	private PasswordEncoder passwordEncoder;
+	
+	private String username;
+	private String password;
+	private String fullname;
+	private String street;
+	private String city;
+	private String state;
+	private String zip;
+	private String phone;
+	
+	public User toUser(RegistrationForm form) {
+		form.setPassword(passwordEncoder.encode(password));
+		return new User(form);
+	}
+}

@@ -1,0 +1,16 @@
+package tacos.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import tacos.security.RegistrationForm;
+
+@Controller
+public class RegistrationController {
+
+	@PostMapping("/register")
+	public void regiseter(@ModelAttribute RegistrationForm form) {
+		
+	}
+}
