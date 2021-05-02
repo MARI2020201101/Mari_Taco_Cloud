@@ -22,10 +22,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
+				.antMatchers("/design","/orders").access("hasRole('ROLE_USER')")
 				.antMatchers("/**").permitAll()
 				.and()
 				.formLogin()
 				.loginPage("/login")
+				.and()
+				.logout()
+				.logoutSuccessUrl("/")
 				.and()
 				.csrf().ignoringAntMatchers("/h2-console/**")
 			    .and()

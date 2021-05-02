@@ -25,8 +25,6 @@ public class RegistrationControllerTest {
 	@Autowired
 	MockMvc mockMvc;
 	@Autowired
-	ObjectMapper objectMapper;
-	@Autowired
 	PasswordEncoder passwordEncoder;
 	@Test
 	public void securityTest() throws Exception {
@@ -41,10 +39,10 @@ public class RegistrationControllerTest {
 												.zip("00000")
 												.build();
 		User user = form.toUser(form, passwordEncoder);
+		ObjectMapper objectMapper = new ObjectMapper();		
 		String content = objectMapper.writeValueAsString(user);
 		mockMvc.perform(post("/register")
 				.content(content))
-				
 				
 				.andDo(print());
 	}
