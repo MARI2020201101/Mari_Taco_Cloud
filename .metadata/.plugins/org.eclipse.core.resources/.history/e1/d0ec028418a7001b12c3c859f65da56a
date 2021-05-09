@@ -1,8 +1,0 @@
-package tacos.web;
-
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-
-@AutoConfigureMockMvc
-public class DesignTacoControllerTest {
-
-}
