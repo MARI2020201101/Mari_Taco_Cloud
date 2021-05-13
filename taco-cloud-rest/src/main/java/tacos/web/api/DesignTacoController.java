@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.Link;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -49,7 +50,17 @@ public class DesignTacoController {
 				0, 3, Sort.by("createdAt").descending() );
 		List<Taco> tacos = tacoRepo.findAll(page).getContent();
 		CollectionModel<EntityModel<Taco>> recentModels = CollectionModel.wrap(tacos);
-		recentModels.add(Link.of("http://localhost:8080/design/recent/","recents"));
+		
+		recentModels.add(
+				WebMvcLinkBuilder
+				
+				
+				.linkTo(DesignTacoController.class)
+				
+				.slash("recent")
+				.withRel("recents"));
+				
+				//Link.of("http://localhost:8080/design/recent/","recents"));
 		return recentModels;
 	}
 	

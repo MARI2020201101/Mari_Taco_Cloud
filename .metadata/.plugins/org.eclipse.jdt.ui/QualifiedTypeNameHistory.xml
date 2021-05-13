@@ -35,7 +35,6 @@
     <fullyQualifiedTypeName name="tacos.data.TacoRepository"/>
     <fullyQualifiedTypeName name="tacos.Ingredient"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
     <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
@@ -58,6 +57,7 @@
     <fullyQualifiedTypeName name="jdk.internal.module.Resources"/>
     <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.web.WebProperties.Resources"/>
     <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.web.ServerProperties.Tomcat.Resource"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.springframework.hateoas.Link"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
 </qualifiedTypeNameHistroy>
