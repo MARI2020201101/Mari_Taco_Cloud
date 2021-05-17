@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort;
 
 @Builder
 @AllArgsConstructor
+@Data
 public class PageRequestDTO {
 
     private int page;
@@ -20,5 +21,6 @@ public class PageRequestDTO {
     public PageRequest getPageable(Sort sort){
         return PageRequest.of(page-1, size, sort);
     }
+
 
 }

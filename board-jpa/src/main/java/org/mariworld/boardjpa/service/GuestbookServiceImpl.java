@@ -32,6 +32,7 @@ public class GuestbookServiceImpl implements GuestbookService{
         PageRequest pageRequest =pageRequestDTO.getPageable(Sort.by("gno").descending());
         Page<Guestbook> result =guestbookRepository.findAll(pageRequest);
         Function<Guestbook,GuestbookDTO> fn = i->entityToDto(i);
+        //바로 stream으로 List전달해도 OK
         return new PageResultDTO<>(result,fn);
     }
 }

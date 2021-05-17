@@ -3,10 +3,11 @@ package org.mariworld.boardjpa.service;
 import org.junit.jupiter.api.Test;
 import org.mariworld.boardjpa.dto.GuestbookDTO;
 import org.mariworld.boardjpa.dto.PageRequestDTO;
+import org.mariworld.boardjpa.dto.PageResultDTO;
 import org.mariworld.boardjpa.entity.Guestbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
+
 
 import java.util.List;
 
@@ -35,5 +36,20 @@ public class GuestbookServiceTests {
                 .getDtoList()
                 .forEach(System.out::println);
 
+    }
+    @Test
+    public void getListTest2(){
+        PageRequestDTO pageRequestDTO =
+                PageRequestDTO.builder().page(11).size(10).build();
+        PageResultDTO<GuestbookDTO,Guestbook> result =
+                guestbookService.getList(pageRequestDTO);
+        System.out.println(result.getPageList());
+        System.out.println(result.getEnd());
+        System.out.println(result.getSize());
+        System.out.println(result.getStart());
+        System.out.println(result.getTempEnd());
+        System.out.println(result.getTotalPage());
+        System.out.println(result.isNext());
+        System.out.println(result.isPrev());
     }
 }
